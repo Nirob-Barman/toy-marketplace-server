@@ -38,10 +38,11 @@ async function run() {
             res.send(result);
         });
 
-        // app.get('/all-toys', async (req, res) => {
-        //     const result = toysCollection.find().toArray();
-        //     res.send(result);
-        // })
+        app.get('/all-toys', async (req, res) => {
+            const toys = toysCollection.find();
+            const result = await toys.toArray();
+            res.send(result);
+        })
 
 
 
